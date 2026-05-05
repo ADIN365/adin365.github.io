@@ -2,14 +2,123 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>ADIN365</title>
-<style>body{font-family:-apple-system,sans-serif;max-width:600px;margin:80px auto;padding:0 20px;line-height:1.6;color:#333}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADIN365 — 모바일 앱 스튜디오</title>
+<meta name="description" content="ADIN365 가 만든 안드로이드 앱 모음. 실생활을 편리하게 만드는 앱을 개발합니다.">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    background:linear-gradient(135deg,#f5f7fa 0%,#e8ecf3 100%);
+    color:#1a1a1a;
+    min-height:100vh;
+    line-height:1.6;
+  }
+  .container{max-width:960px;margin:0 auto;padding:60px 24px}
+  header{text-align:center;margin-bottom:60px}
+  .logo{
+    display:inline-block;
+    font-size:32px;font-weight:800;letter-spacing:-1px;
+    background:linear-gradient(135deg,#4a6cf7 0%,#7c5cff 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+    margin-bottom:12px;
+  }
+  .tagline{color:#5a6478;font-size:16px}
+  h2{font-size:14px;font-weight:600;color:#8a93a6;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:24px;text-align:center}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:20px;
+  }
+  .card{
+    background:#fff;
+    border-radius:16px;
+    padding:24px;
+    box-shadow:0 2px 8px rgba(15,23,42,.04),0 1px 2px rgba(15,23,42,.06);
+    transition:transform .2s,box-shadow .2s;
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+    flex-direction:column;
+    border:1px solid rgba(15,23,42,.04);
+  }
+  .card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(15,23,42,.08),0 2px 4px rgba(15,23,42,.06);
+  }
+  .card-header{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .card-icon{
+    width:56px;height:56px;border-radius:14px;
+    object-fit:cover;flex-shrink:0;
+    background:#f0f2f7;
+  }
+  .card-title{font-size:18px;font-weight:700;letter-spacing:-.3px}
+  .card-meta{font-size:12px;color:#8a93a6;margin-top:2px}
+  .card-desc{font-size:14px;color:#4a5266;flex-grow:1;margin-bottom:16px}
+  .card-cta{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;font-weight:600;color:#4a6cf7;
+  }
+  .card-cta::after{content:"→";transition:transform .2s}
+  .card:hover .card-cta::after{transform:translateX(3px)}
+  .coming-soon{opacity:.6;cursor:default}
+  .coming-soon:hover{transform:none;box-shadow:0 2px 8px rgba(15,23,42,.04),0 1px 2px rgba(15,23,42,.06)}
+  .coming-soon .card-cta{color:#8a93a6}
+  .coming-soon .card-cta::after{content:""}
+  footer{
+    text-align:center;margin-top:60px;padding-top:32px;
+    border-top:1px solid rgba(15,23,42,.06);
+    color:#8a93a6;font-size:13px;
+  }
+  footer a{color:#5a6478;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+  footer a:hover{border-bottom-color:#5a6478}
+  @media (max-width:480px){
+    .container{padding:40px 16px}
+    .logo{font-size:28px}
+  }
+</style>
 </head>
 <body>
-<h1>ADIN365</h1>
-<p>모바일 앱 개발자 페이지입니다.</p>
-<ul>
-  <li><a href="https://play.google.com/store/apps/dev?id=ADIN365">Google Play 앱 목록</a></li>
-</ul>
+<div class="container">
+  <header>
+    <div class="logo">ADIN365</div>
+    <div class="tagline">실생활을 편리하게 만드는 모바일 앱을 만듭니다</div>
+  </header>
+
+  <h2>출시된 앱</h2>
+  <div class="grid">
+    <a class="card" href="https://play.google.com/store/apps/details?id=c.lazyworks.parking" target="_blank" rel="noopener">
+      <div class="card-header">
+        <img class="card-icon" src="parking-icon.png" alt="내차찾기 아이콘">
+        <div>
+          <div class="card-title">내차찾기</div>
+          <div class="card-meta">주차 위치 자동 저장</div>
+        </div>
+      </div>
+      <div class="card-desc">블루투스 연결이 끊기는 순간 차의 위치를 자동으로 기록합니다. 층수 기록, 사진 첨부, 홈 위젯까지.</div>
+      <div class="card-cta">Google Play 에서 보기</div>
+    </a>
+
+    <div class="card coming-soon">
+      <div class="card-header">
+        <div class="card-icon" style="display:flex;align-items:center;justify-content:center;font-size:24px">✨</div>
+        <div>
+          <div class="card-title">다음 앱 준비 중</div>
+          <div class="card-meta">Coming soon</div>
+        </div>
+      </div>
+      <div class="card-desc">새로운 앱을 개발 중입니다. 곧 만나보세요.</div>
+      <div class="card-cta">&nbsp;</div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 ADIN365. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://play.google.com/store/apps/dev?id=ADIN365" target="_blank" rel="noopener">Google Play 개발자 페이지</a>
+    </p>
+  </footer>
+</div>
 </body>
 </html>
